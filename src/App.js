@@ -1,12 +1,19 @@
 //import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Addscreen from './pages/Addscreen';
 
-function App() {
+function App(){
+
   return (
     <div className="App">
+        <Addscreen/>
       <div className="container">
-        <h1>App or details from app.js to index.js then index.html</h1>
+        <h1>Working header</h1>
+        <p1>Lesego</p1>
       </div>
+      <Addscreen/>
+      
     </div>
   );
 }
