@@ -1,0 +1,8 @@
+.task-container{
+    display:flex;
+    background-color: blue;
+    width:626px;
+    height: 106px;
+    flex-shrink: 0;
+    box-shadow:3px 3px 10px 0px rgba(0,0,0,0.10);
+}
