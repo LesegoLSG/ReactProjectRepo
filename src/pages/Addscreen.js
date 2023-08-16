@@ -1,13 +1,23 @@
+
 import React from 'react';
-import Editscreen from './Editscreen';
-import '../stylesheet/Arrow-left.css'
+//import Editscreen from './Editscreen';
+//import '../stylesheet/Arrow-left.css'
+import Arrow from '../components/Arrow';
+import ImageComp from '../components/ImageComp';
+import '../stylesheet/Home.css';
+import '../stylesheet/Screenadd.css';
+
 
 const Addscreen = () => {
+  
     return (  
-       <div className="content">
-            <p1> My Add screen</p1>
-            <Editscreen/>
-            </div>
+        <div>
+           
+        <Arrow nameurl="/"/>
+        <ImageComp btnName="Add Member"/>
+        
+        </div>
+      
     );
 }
  
