@@ -1,0 +1,20 @@
+
+button{
+    /**The button outer**/
+    display:inline-block;
+    padding:10px 26px;
+    justify-content: center;
+    align-items:center;
+    gap:18px;
+    background-color: #164B60;
+  
+     /**The button outer**/
+     color:#FFF;
+     font-family:Inter;
+     font-size:12px;
+     font-style:normal;
+     font-weight:600;
+     line-height:normal;
+    
+  
+  }
