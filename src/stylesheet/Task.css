@@ -5,4 +5,43 @@
     height: 106px;
     flex-shrink: 0;
     box-shadow:3px 3px 10px 0px rgba(0,0,0,0.10);
+    margin-bottom:40px;
+
+    position:relative;
+    top:236px;
+    left:325px;
+}
+
+.image-task-container{
+    width:103px;
+    height:69px;
+    background-color: chartreuse;
+    margin-top:19px;
+    margin-left: 8px;
+}
+
+.icons-task{
+    align-items:center;
+    color:#fff;
+    border:var(--primary-color) ;
+    cursor:pointer;
+    width:22px;
+    height:22px;
+}
+
+.no-member-container{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: blue;
+    width:626px;
+    height: 106px;
+    flex-shrink: 0;
+    box-shadow:3px 3px 10px 0px rgba(0,0,0,0.10);
+    margin-bottom:40px;
+
+
+    position:relative;
+    top:236px;
+    left:325px;
 }
