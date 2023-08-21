@@ -57,10 +57,14 @@
 }
 
 .img-display-after{
-    margin-top:3px;
+
+    margin-top:77px;
+    margin-left:46px;
+
     height:161px;
     width:161px;
     border-radius: 100%;
+    
 }
 
 #name-field,#job-field{
@@ -79,8 +83,6 @@
 #name-field{
     position:absolute;
     top:395px;
-    left:327px;
-    right:327px;
     width:626px;
     height:61px;
 }
@@ -89,7 +91,6 @@
 #job-field{
     position:absolute;
     top:480px;
-    left:327px;
     width:626px;
     height:61px;
 }
@@ -97,8 +98,6 @@
 #submitbtn{
     position:absolute;
     top:583px;
-    left:541px;
+    
     padding:10px 26px 10px 26px;
 }
-
-

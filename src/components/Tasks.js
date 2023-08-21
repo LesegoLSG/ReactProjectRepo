@@ -3,13 +3,17 @@ import Task from './Task';
 
 
 /*Iterate through the list and displaying the list */
-const Tasks = ({tasks, onDelete }) => {
+const Tasks = ({tasks, onDelete  }) => {
     
     return (  
         <>
-           {tasks.map((mytasks) =>(
+           {tasks.map((mytasks,index) =>(
             /*'key' word for uniqueness*/ 
-            <Task key={mytasks.id} task={mytasks} onDelete={onDelete}/>
+            <Task 
+            key={index}
+            /*key={mytasks.id} */
+            task={mytasks} 
+            onDelete={onDelete} />
            ))} 
         </>
     );

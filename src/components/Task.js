@@ -1,18 +1,18 @@
 import '../stylesheet/Task.css'
 import { FaPen, FaTrash } from 'react-icons/fa'
 
-const Task = ({ task,onDelete }) => {
+const Task = ({ task,onDelete,onEdit}) => {
     return (
         <div className="task-container">
             <div className="image-task-container">
-                <h3>image</h3>
+                <img src={task.urlImage} alt="Preview" className='img-display-after'/>
             </div>
             <div>
-                <h3>{task.text}</h3>
-                <p>{task.day}</p>
+                <h3>{task.firstname}</h3>
+                <p>{task.jobtitle}</p>
             </div>
-            <FaPen className='icons-task' />
-            <FaTrash className='icons-task' onClick={ () => onDelete(task.id)} />
+            <FaPen className='icons-task' onClick={() => onEdit(task.id)} />
+            <FaTrash className='icons-task'  onClick={ () => onDelete(task.id) }  />
         </div>
     );
 }
