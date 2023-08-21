@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useEffect,useParams} from 'react';
 import Button from './Button';
+import { BsArrowLeft } from 'react-icons/bs'
 
 
 
@@ -14,24 +15,41 @@ const EditTask = ({taskId,onUpdate}) => {
     const [urlfile, setUrlfile] = useState('');
    
     
-    /*
-    useEffect(() =>{
-    const fetchTask = async() =>{
+    
+    
+    const fetchTask = async(id) =>{
         try{
             const res = await fetch(`http://localhost:5001/tasks/${id}`);
             const data = await res.json();
             
-            setFirstname(data.firstname);
-            setJobtitle(data.jobtitle);
-            setImage(data.image);
+            return data
+
+            
 
         }catch(error){
             console.error('Could not fetch data from database');
             throw error;
         }
+        
     };
-    fetchTask();
-    }, [id]);
+
+    useEffect(() =>{
+        if(image){
+            setUrlfile(image);
+        }
+    },[image]);
+
+    useEffect(() =>{
+        fetchTask(taskId).then(myInfo => {
+            setFirstname(myInfo.firstname);
+            setJobtitle(myInfo.jobtitle);
+            setImage(myInfo.urlImage);
+        })
+        .catch(error =>{
+            console.error('Task could not be fetched',error);
+        });
+    },[taskId]);
+    
     
 
    
@@ -43,12 +61,12 @@ const EditTask = ({taskId,onUpdate}) => {
             firstname,
             jobtitle,
             urlImage:urlfile,
-        };
+        }
 
-        onUpdate(id,taskToUpdate);
+        onUpdate(taskToUpdate);
 
     };
-*/
+
     const handleImage = (e) =>{
         const file = e.target.files[0];
         if(file){
@@ -61,11 +79,14 @@ const EditTask = ({taskId,onUpdate}) => {
         }
     };
 
-
+    const homeNavigation = () => {
+        window.location.href = 'http://localhost:3000/';
+    };
 
 
     return ( 
         <section>
+            <BsArrowLeft style={{color: "blue", fontSize: "50"}} onClick={homeNavigation} />
             <form className='image-container' >
 
                 

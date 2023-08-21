@@ -22,32 +22,40 @@
 
 
 .image-container{
-    position:absolute;
+    position:relative;
     top:187px;
     left:530px;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
     width:161px;
     height:161px;
     flex-shrink: 0;
     stroke-width:1px;
     stroke: var(--primary-color);
-    border-radius: 100%;
+    /*border-radius: 100%;*/
 
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    border:2px solid var(--primary-color);
+    /*border:2px solid var(--primary-color);*/
 }
 
 .image-container .imageicon{
-    /*
+    
     position:absolute;
-    top:240px;
-    width:61px;
-    height:61px;
+   
+    bottom:10px;
+    
     border-radius: 100%;
-    */
+    
+
+}
+
+.input-container{
+    position:relative;
+    bottom:200px;
+    right:200px;
+    background-color: rgb(6, 211, 211);
 
 }
 
@@ -68,6 +76,7 @@
 }
 
 #name-field,#job-field{
+    
     color:black;
     font-family:Inter;
     font-size:16px;
@@ -95,9 +104,10 @@
     height:61px;
 }
 
-#submitbtn{
+.input-container #submitbtn{
     position:absolute;
-    top:583px;
+    bottom:500px;
+    left:500px;
     
     padding:10px 26px 10px 26px;
 }

@@ -11,8 +11,8 @@ const Task = ({ task,onDelete,onEdit}) => {
                 <h3>{task.firstname}</h3>
                 <p>{task.jobtitle}</p>
             </div>
-            <FaPen className='icons-task' onClick={() => onEdit(task.id)} />
-            <FaTrash className='icons-task'  onClick={ () => onDelete(task.id) }  />
+            <FaPen className='icons-task ' onClick={() => onEdit(task.id)} />
+            <FaTrash className='icons-task space'  onClick={ () => onDelete(task.id) }  />
         </div>
     );
 }

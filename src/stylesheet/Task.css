@@ -21,18 +21,34 @@
 }
 
 .image-task-container img{
+    position:relative;
+    bottom:74px;
+    right:30px;
+
    width: 63px;
    height:63px;
    border-radius: 100%;
 }
 
 .icons-task{
-    align-items:center;
+    align-items:left;
     color:#fff;
     border:var(--primary-color) ;
     cursor:pointer;
     width:22px;
     height:22px;
+
+    position:absolute;
+    top:45px;
+    bottom:0px;
+    left:550px;
+    right:0px;
+    
+}
+
+.space{
+    margin-left:20px;
+    padding-left:20px;
 }
 
 .no-member-container{
@@ -51,3 +67,5 @@
     top:236px;
     left:325px;
 }
+
+

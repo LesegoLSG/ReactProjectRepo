@@ -11,7 +11,7 @@ import AddTask from '../components/AddTask'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import { useState, useEffect } from 'react';
-
+//import { useNavigate } from 'react-router-dom';
 
 
 
@@ -19,12 +19,15 @@ import { useState, useEffect } from 'react';
 
 
 const Home = () => {
-    const [showAddTask, setShowAddTask] = useState('false');
+    const [showAddTask, setShowAddTask] = useState(false);
     //const [Tasks, setTasks]=useState([]);
-    const [showUpdatedForm, setShowUpdatedForm] = useState('false')
+    const [showUpdatedForm, setShowUpdatedForm] = useState(false)
     const [selectedTask, setSelectedTask] = useState(null)
 
     const [tasks, setTasks] = useState([])
+
+     //Navigating to home
+     const navigate = useNavigate();
 
     useEffect(() => {
         const getTasks = async () => {
@@ -104,34 +107,41 @@ const Home = () => {
     };
 
  */
+     const homeNavigation = () =>{
+        navigate('/add');
+    };
 
 
     return (
         <div className="content">
-            
-          
-        
-            {tasks.length > 0 ? (
+
+
+            {!showAddTask && !showUpdatedForm && <button onClick={() => setShowAddTask(!showAddTask)} className='btnAdd'> + Add member</button>}
+
+
+            {!showAddTask && !showUpdatedForm && tasks.length > 0 ? (
 
                 <Tasks
                     tasks={tasks}
                     onDelete={deleteTask}
-                    //onEdit={handleEditTask}
+                //onEdit={handleEditTask}
                 />
 
-            ) : (
+            ) :!showAddTask && !showUpdatedForm && (
                 <NoMembers />
             )}
-      {/*
-            <div>
-            <AddTask onAdd={addTask} />
-            </div>
-               */} 
-             
+
+
+
+            {showAddTask && !showUpdatedForm &&
+                <AddTask onAdd={addTask} /> 
+            }
+
+            {/*
                     <EditTask  />
-                
-                
-           
+            */}
+
+
 
 
 
