@@ -112,7 +112,7 @@ const Home = () => {
     return (
         <div className="content">
 
-
+        
             {!showAddTask && !showUpdatedForm && <button onClick={() => setShowAddTask(!showAddTask)} className='btnAdd'> + Add member</button>}
 
 

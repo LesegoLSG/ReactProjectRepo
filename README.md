@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Project Name: 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Unit-selection
 
-## Available Scripts
+### Code written by: Lesego Mhlongo
 
-In the project directory, you can run:
 
-### `npm start`
+This is a mini project single page web application submitted to [Tshimologong Precinct](https://tshimologong.joburg/) within a period of a week from 14-21 August 2023.The project has 71.4% of React 19.9% of CSS and 8.7% of HTML. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The main idea of the project is to add, delete and update the members from and to the JSON server so that we can maintain data even when the user refreshes the page. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to navigate through the 'unit-selector' web application:
 
-### `npm test`
+Components used(in unordered list) :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
++ NoMembers
++ AddTask
++ Edit
++ Button
++ Task
++ Tasks
++ Header
 
-### `npm run build`
+As stated above, the project consists of a single page with multiple components embedded on this page. When you first run the application, you will see 'no member component' because the member state is empty (no members in the JSON file list).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+No member page:
+  
+![](Markdown/HomeNoMember.png) [](README.md)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once the user adds members to the list (we will cover in a moment), the page will look like the below image. Each member is uniquelly identified by JSON server's 'id' with attributes of full name, job title and an image. On the top right corner we have an  <font color="green">Add Member</font> button which allows a user to add a member in a list in descending order.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Home Page:
+![](Markdown/Home.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### *Adding a member to the list:*
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clicking on the <font color="green">Add Member</font> will direct you to the 'AddTask component' and the page will look like an image below.
+2. Three attributes will be required (an image, full name and job title).
+3. To upload an image, the user will should click on the choose file button and choose an image of their choice from the local files in their computer.
+4. To input the their full name and job title, there are inputs fields which a user can fill. The input fields only takes in strings, so if a user input a number (integer,double,float values etc). An error will be displayed to the user and require them to refill the input field containing false data.
+5. Once all the above is corretly done, user can now click on the <font color="green">Add Member</font> button to store a member to the list component, if the submittion is done correctly an alert will be displayed informing the user that a member is added to the list and redirect them to the above component.
+6. The back arrow allows the user to discard changes and redirects them to the list component. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### *Removing/deleting a member from the list:*
+1. To delete a member from the list, a user can click on the bin icon.
+1. A prompt will be displayed confirming if a user really wants to delete the member. 
+2. If a user clicks 'yes' a member will be deleted from JSON file and data member cannot be retrieved.
+3. If a user clicks 'no' the member will not be deleted and member data will be visible in a list of members.
+   
+Add member component:
+![Alt text](Markdown/AddScreen.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This application also provides the abiliy to 'edit members'. An image below shows how the edit component looks like. 
 
-## Learn More
+### *Edit the member in a list:*
+1. On each member, there is an edit icon (Green pen icon). When a user clicks on the icon, the member data is transfered to the edit component and user is redirected to the edit component.
+2. User can change an image, full name and job title.
+3. If all the attributes are fulled or changed, user can click on the edit button to change member data.
+4. A prompt will be displayed informing user that the member details are updated and will be redirected to the list component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Alt text](Markdown/Edit.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## How to run the 'unit-selector' web application:
+#### In visual code (code):
+* Download visual code [Here](https://code.visualstudio.com/download)
+* Install node.js [Here](https://nodejs.org/en/download)
+*  Configure node.js, go to settings, search for Environment variables and include a path to your node.js.
 
-### Code Splitting
+Once installed, open your visual code IDE and on the terminal run the following commands:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+npm run start
+npm run server
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Project is not yet deployed, However, once it is deployed a 
+link will be provide [here](https://github.com/LesegoLSG/ReactProjectRepo.git) on the projects GitHub repository.
+  
 
-### Making a Progressive Web App
+##### <font color="green">The project is full maintained by myself(Lesego Mhlongo)</font>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### For more information, please feel free to contact me on:
+Phone & WhatsApp: (+27) 640373089
 
-### Advanced Configuration
+Email: lesegomhlongo78@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Facebook: [Here](https://www.facebook.com/lesego.mhlongo.3)
 
-### Deployment
+Linkedin: [Here](https://www.linkedin.com/in/lesego-mhlongo-081a82228)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+##### Qualifications: 
 
-### `npm run build` fails to minify
+BSc In Computer science & Informatics (University of Johannesburg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Financial Advisory and Intermediary Services (FAIS Level 4)
+
+![Alt text](Markdown/89fe995e-7d05-413d-b35d-c0dedca841f0.jpg)
+
+
+
+
