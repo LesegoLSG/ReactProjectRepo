@@ -80,7 +80,7 @@ Project is not yet deployed, However, once it is deployed a
 link will be provide [here](https://github.com/LesegoLSG/ReactProjectRepo.git) on the projects GitHub repository.
   
 
-##### <font color="green">The project is full maintained by myself(Lesego Mhlongo)</font>
+##### <font color="green">The project is fully maintained by myself(Lesego Mhlongo)</font>
 
 ### For more information, please feel free to contact me on:
 Phone & WhatsApp: (+27) 640373089
