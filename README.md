@@ -97,7 +97,7 @@ BSc In Computer science & Informatics (University of Johannesburg)
 
 Financial Advisory and Intermediary Services (FAIS Level 4)
 
-![Alt text](Markdown/89fe995e-7d05-413d-b35d-c0dedca841f0.jpg)
+![Alt text](Markdown/Graduation.jpg)
 
 
 
