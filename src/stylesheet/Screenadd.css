@@ -48,7 +48,7 @@
     
     border-radius: 100%;
     
-
+    
 }
 
 .input-container{
@@ -72,7 +72,7 @@
     height:161px;
     width:161px;
     border-radius: 100%;
-    
+    border:2px solid #324aa8;
 }
 
 #name-field,#job-field{
@@ -110,4 +110,8 @@
     left:500px;
     
     padding:10px 26px 10px 26px;
+}
+
+#submitbtn:hover{
+    background-color: var(--btnhover-color);
 }

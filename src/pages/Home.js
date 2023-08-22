@@ -1,8 +1,6 @@
 import React from 'react';
 import '../stylesheet/Home.css'
 import { useNavigate } from 'react-router-dom';
-//import Editscreen from './Editscreen';
-//import '../stylesheet/Arrow-left.css'
 import Tasks from '../components/Tasks'
 import NoMembers from '../components/NoMembers';
 import Task from '../components/Task';
@@ -19,11 +17,10 @@ import { useState, useEffect } from 'react';
 
 
 const Home = () => {
+    //states to be used for displaying components based on events
     const [showAddTask, setShowAddTask] = useState(false);
-    //const [Tasks, setTasks]=useState([]);
     const [showUpdatedForm, setShowUpdatedForm] = useState(false)
     const [selectedTask, setSelectedTask] = useState(null)
-
     const [tasks, setTasks] = useState([])
 
      //Navigating to home
@@ -60,11 +57,7 @@ const Home = () => {
 
         const data = await res.json()
         setTasks([...tasks, data])
-        /*
-        const id = Math.floor(Math.round()*10000)+1
-        const newTask = {id,...task}
-        setTasks([...tasks,newTask])
-        */
+       
     }
 
     //Delete a task
@@ -76,10 +69,15 @@ const Home = () => {
     }
 
     //Update task
-    /*
-    const editTask = async (id,updatedTask) =>{
+    const retrieveTask = (TaskId) =>{
+        const taskToUpdate = tasks.find(task => task.id ===TaskId);
+        setSelectedTask(taskToUpdate);
+        setShowUpdatedForm(true);
+    };
+    
+    const editTask = async (updatedTask) =>{
         try{
-            const res = await fetch(`http://localhost:5001/tasks/${id}`,{
+            const res = await fetch(`http://localhost:5001/tasks/${updatedTask.id}`,{
                 method: 'PUT',
                 headers: {
                     'Content-type':'application/json',
@@ -88,16 +86,15 @@ const Home = () => {
             });
 
             if(res.ok){
-                const allUpdatedTasks = tasks.map(mytask =>{
-                    if(mytask.id ===id){
-                        return {...mytask,...updatedTask};
-                    } 
-                    return mytask; 
-                } 
+                const allUpdatedTasks = tasks.map(task =>
+                    task.id ===updatedTask.id ? updatedTask : task
                 );
-
-                setTasks(allUpdatedTasks);
-                fetchTasks();
+                setTasks(allUpdatedTasks)
+                setSelectedTask(null);
+                setShowUpdatedForm(false);
+                
+            }else{
+                alert('Error updating task');
             }
              
 
@@ -106,12 +103,12 @@ const Home = () => {
         }
     };
 
- */
+ 
      const homeNavigation = () =>{
         navigate('/add');
     };
 
-
+    //States are used below to show components based on events
     return (
         <div className="content">
 
@@ -124,7 +121,7 @@ const Home = () => {
                 <Tasks
                     tasks={tasks}
                     onDelete={deleteTask}
-                //onEdit={handleEditTask}
+                onEdit={retrieveTask}
                 />
 
             ) :!showAddTask && !showUpdatedForm && (
@@ -137,9 +134,9 @@ const Home = () => {
                 <AddTask onAdd={addTask} /> 
             }
 
-            {/*
-                    <EditTask  />
-            */}
+            {!showAddTask && showUpdatedForm &&
+            <EditTask taskId={selectedTask.id} onUpdate={editTask} />
+             }
 
 
 

@@ -23,4 +23,9 @@ button{
     position:relative;
     top:200px;
     left:810px;
+    cursor:pointer;
+  }
+
+  .btnAdd:hover{
+    background-color:var(--btnhover-color);
   }

@@ -6,9 +6,7 @@ import { BsArrowLeft } from 'react-icons/bs'
 
 
 const EditTask = ({taskId,onUpdate}) => {
-    //states
-
-    
+    //states declaration
     const [firstname, setFirstname] = useState('');
     const [jobtitle, setJobtitle] = useState('');
     const [image, setImage] = useState('');
@@ -16,15 +14,12 @@ const EditTask = ({taskId,onUpdate}) => {
    
     
     
-    
+    //Function: Fetches the task/member based on the id
     const fetchTask = async(id) =>{
         try{
             const res = await fetch(`http://localhost:5001/tasks/${id}`);
             const data = await res.json();
-            
             return data
-
-            
 
         }catch(error){
             console.error('Could not fetch data from database');
@@ -32,13 +27,13 @@ const EditTask = ({taskId,onUpdate}) => {
         }
         
     };
-
+    //Set image when page loads
     useEffect(() =>{
         if(image){
             setUrlfile(image);
         }
     },[image]);
-
+    //Sets task/member when a page loads
     useEffect(() =>{
         fetchTask(taskId).then(myInfo => {
             setFirstname(myInfo.firstname);
@@ -53,7 +48,7 @@ const EditTask = ({taskId,onUpdate}) => {
     
 
    
-
+    //Function: handles edit when the button edit is clicked
     const handleSubmit = async (e) =>{
         e.preventDefault();
         const taskToUpdate ={
@@ -66,7 +61,7 @@ const EditTask = ({taskId,onUpdate}) => {
         onUpdate(taskToUpdate);
 
     };
-
+    //Function: handles image
     const handleImage = (e) =>{
         const file = e.target.files[0];
         if(file){
@@ -78,16 +73,16 @@ const EditTask = ({taskId,onUpdate}) => {
             reader.readAsDataURL(file);
         }
     };
-
+    //Function: for navigating to the home component when back arrow is clicked
     const homeNavigation = () => {
         window.location.href = 'http://localhost:3000/';
     };
 
-
+    //Below is displayed to the used
     return ( 
         <section>
             <BsArrowLeft style={{color: "blue", fontSize: "50"}} onClick={homeNavigation} />
-            <form className='image-container' >
+            <form className='image-container' onSubmit={handleSubmit}>
 
                 
                 <div className="imageicon">

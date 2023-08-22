@@ -12,8 +12,6 @@ import { BsArrowLeft } from 'react-icons/bs'
 
 const AddTask = ({ onAdd }) => {
     /*state for image*/
-    //const inputRef = useRef(null);
-    //const [image, setImage] = useState("");
     const backpicture = Imageicon;
     const [urlfile, setUrlfile] = useState(backpicture);
 
@@ -21,7 +19,7 @@ const AddTask = ({ onAdd }) => {
     const [firstname, setFirstname] = useState('');
     const [jobtitle, setJobtitle] = useState('');
 
-    //Navigating to home
+    //Navigating to home (not used: there for reference)
     const navigate = useNavigate();
 
     const handleImage = (e) => {
@@ -36,19 +34,8 @@ const AddTask = ({ onAdd }) => {
         }
     }
 
-    /*
-    const handleImageClick = () => {
-        inputRef.current.click();
-    };
-    
-
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        console.log(file);
-        setImage(event.target.files[0]);
-    };
-    */
-
+  
+    //Function: handles add member event
     const onSubmit = (e) => {
         /*prevent page refresh, in html: href="#"*/
         e.preventDefault()
@@ -63,17 +50,18 @@ const AddTask = ({ onAdd }) => {
         setJobtitle('')
     }
 
+    //Function: For navigating to the home component
     const homeNavigation = () => {
         window.location.href = 'http://localhost:3000/';
     };
 
-
+    //Below is displayed to the user, allowing them to add member/task
     return (
 
         <section>
 
       
-             <BsArrowLeft style={{color: "blue", fontSize: "50"}} onClick={homeNavigation} />
+             <BsArrowLeft style={{color: "#164B60", fontSize: "50",cursor:"pointer"}} onClick={homeNavigation} />
 
             <form className='image-container' onSubmit={onSubmit}>
        
@@ -99,7 +87,7 @@ const AddTask = ({ onAdd }) => {
                         value={jobtitle}
                         onChange={(e) => setJobtitle(e.target.value)}
                     />
-                 <Button onClick={onAdd} text='Add Member(AddPage)' id='submitbtn' />
+                 <Button onClick={onAdd} text='Add Member' id='submitbtn' />
                 </div>
               
                  

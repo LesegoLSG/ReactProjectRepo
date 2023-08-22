@@ -7,12 +7,12 @@ import AddTask from './components/AddTask';
 
 
 
-
+//Root component
 function App(){
   
   return (
     <div className="App">
-      
+     {/* Route the browser (Main used for navigating back to home)*/} 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<AddTask />} />
