@@ -3,7 +3,7 @@ import Task from './Task';
 
 
 /*Iterate through the list and displaying the task/member list */
-const Tasks = ({tasks, onDelete  }) => {
+const Tasks = ({tasks, onDelete,onEdit }) => {
     
     return (  
         <>
@@ -13,7 +13,10 @@ const Tasks = ({tasks, onDelete  }) => {
             <Task 
             key={index}
             task={mytasks} 
-            onDelete={onDelete} />
+            onDelete={onDelete} 
+            onEdit={onEdit}
+            />
+            
            ))} 
         </>
     );
