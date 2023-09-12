@@ -50,7 +50,8 @@ const EditTask = ({selectedTask,updateOurTask}) => {
             reader.onload = (e) =>{
                 const dataUrl = e.target.result;
                 setUrlfile(dataUrl);
-                // selectedTask.urlImage=dataUrl;
+                
+                 //selectedTask.urlImage=dataUrl;
             };
             reader.readAsDataURL(file);
         }
@@ -71,7 +72,7 @@ const EditTask = ({selectedTask,updateOurTask}) => {
                 
                 <div className="imageicon">
                     <img  src={urlfile} alt="Preview" className='img-display-after'/>
-                    <input type="file"  onChange={handleImage} accept="image/*"/>
+                    <input type="file"  onChange={handleImage}  accept="image/*"/>
                 </div>
             
                 <div className='input-container'>
