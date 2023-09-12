@@ -1,13 +1,13 @@
 import React from 'react';
-import '../stylesheet/Home.css'
+import '../stylesheet/Home.css';
 import { useNavigate } from 'react-router-dom';
-import Tasks from '../components/Tasks'
+import Tasks from '../components/Tasks';
 import NoMembers from '../components/NoMembers';
 import Task from '../components/Task';
 import EditTask from '../components/EditTask';
-import AddTask from '../components/AddTask'
-import Button from '../components/Button'
-import Header from '../components/Header'
+import AddTask from '../components/AddTask';
+import Button from '../components/Button';
+import Header from '../components/Header';
 import { useState, useEffect } from 'react';
 //import { useNavigate } from 'react-router-dom';
 
@@ -134,6 +134,8 @@ const Home = () => {
                     onDelete={deleteTask}
                     onEdit={retrieveTask}
                 />
+                
+               
 
             ) :!showAddTask && !showUpdatedForm && (
                 <NoMembers />
@@ -151,7 +153,7 @@ const Home = () => {
             
 
 
-
+            
 
 
 
